@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculate</title>
+	<link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>
+	<center>
+		<div id=next>
+		   <form >
+		      Name:<br><input type="text" id="name"name="Name" placeholder="Name" value=""/>
+		      <br>
+		      TotalMark:<br><input type="text" id="mark" name="mark" placeholder="TotalMark" value="" />
+		      <br><br>
+		      <input type="button" onclick="calculate();" name="Submit" value="Submit"></button>
+		</div>
+		<p id="s"></p>
+	</center>
+    <script type="text/javascript">
+    	var arr=[];
+  		var arr1=[];
+  		var arr2=[];
+  		var arr3=[];
+  		var j=0;
+  		var k=0;
+  		var r="";
+  		function calculate()
+  		{
+    		var name=document.getElementById("name").value;
+    		var mark=document.getElementById("mark").value;
+     		if(mark>=100&&mark<=600)
+    		{
+        		var p=mark.concat(name);
+        		arr.push(mark);
+        		arr.sort();
+        		arr2.push(p);
+        		arr2.sort();
+        		for(var i=0;i<arr.length;i++)
+        		{
+           			arr1[j]=arr[i];
+           			arr3[k]=arr2[i];
+           			arr3[k]=arr3[k].replace(/[0-9]/g,'');
+           			r=r+arr3[k]+" "+arr1[j]+"<br/>";
+           			j++;
+           			k++;
+        		}
+ 				document.getElementById("s").innerHTML=r;
+        		document.getElementById("mark").value="";
+        		document.getElementById("name").value="";
+        		arr1=[];
+         		r="";
+    		}
+		}
+	</script>	
+	
+</body>
+</html>
